@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vishal Consulting | Angel One NXT</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    min-height:100vh;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
+    background:
+    radial-gradient(circle at 90% 8%,rgba(30,130,255,.40),transparent 28%),
+    radial-gradient(circle at 5% 85%,rgba(20,75,180,.35),transparent 32%),
+    linear-gradient(145deg,#020817,#061b3d,#020b20);
+    overflow-x:hidden;
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    background:rgba(0,130,255,.18);
+    filter:blur(130px);
+    top:-200px;
+    right:-160px;
+    pointer-events:none;
+}
+
+.container{
+    width:100%;
+    max-width:620px;
+    margin:auto;
+    padding:32px 20px 50px;
+    position:relative;
+}
+
+.brand{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.brand h1{
+    font-size:54px;
+    line-height:.9;
+    font-weight:800;
+    letter-spacing:-2px;
+}
+
+.brand h2{
+    font-size:31px;
+    font-weight:300;
+    margin-top:3px;
+}
+
+.tagline{
+    margin-top:14px;
+    font-size:11px;
+    letter-spacing:5px;
+    color:#d9e9ff;
+}
+
+.hero{
+    margin:20px 0 30px;
+}
+
+.hero h3{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:64px;
+    line-height:.9;
+    letter-spacing:-2px;
+}
+
+.hero h3 span{
+    color:#36aaff;
+    font-style:italic;
+}
+
+.hero p{
+    margin-top:24px;
+    font-size:18px;
+    line-height:1.5;
+    color:#dceaff;
+}
+
+.card{
+    padding:29px 22px 25px;
+    border-radius:34px;
+    background:rgba(9,31,69,.78);
+    border:1px solid rgba(76,163,255,.75);
+    box-shadow:
+    0 0 35px rgba(0,126,255,.23),
+    inset 0 0 30px rgba(255,255,255,.025);
+    backdrop-filter:blur(16px);
+}
+
+.formtracker{
+    text-align:center;
+    color:#66b8ff;
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:7px;
+    margin-bottom:23px;
+}
+
+.company{
+    text-align:center;
+    color:#48aaff;
+    font-size:26px;
+    font-weight:800;
+}
+
+.product{
+    text-align:center;
+    margin-top:7px;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:40px;
+}
+
+.subtitle{
+    text-align:center;
+    margin:13px auto 27px;
+    color:#bcd1f0;
+    line-height:1.45;
+    font-size:16px;
+}
+
+label{
+    display:block;
+    margin:17px 0 9px;
+    font-size:16px;
+    font-weight:800;
+}
+
+.input-box{
+    position:relative;
+}
+
+.icon{
+    position:absolute;
+    left:18px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#9bcaff;
+    font-size:20px;
+}
+
+input{
+    width:100%;
+    height:58px;
+    padding:0 20px 0 52px;
+    border-radius:30px;
+    border:1px solid #559fff;
+    outline:none;
+    color:#fff;
+    background:rgba(28,67,125,.62);
+    font-size:17px;
+}
+
+input::placeholder{
+    color:#a9c3e8;
+}
+
+input:focus{
+    border-color:#7bc3ff;
+    box-shadow:0 0 0 3px rgba(54,157,255,.18);
+}
+
+button{
+    width:100%;
+    min-height:60px;
+    margin-top:25px;
+    border:0;
+    border-radius:35px;
+    color:white;
+    font-size:17px;
+    font-weight:800;
+    letter-spacing:1px;
+    background:linear-gradient(90deg,#087cff,#24b8ff);
+    box-shadow:0 10px 30px rgba(0,130,255,.35);
+    cursor:pointer;
+}
+
+button:disabled{
+    opacity:.65;
+    cursor:wait;
+}
+
+.message{
+    display:none;
+    text-align:center;
+    margin-top:18px;
+    line-height:1.5;
+}
+
+.error{
+    color:#ffaaaa;
+}
+
+.success{
+    color:#7dffb0;
+}
+
+.trust{
+    display:flex;
+    justify-content:space-around;
+    margin:29px 0 21px;
+    color:#d9e7fb;
+    font-size:14px;
+}
+
+.privacy{
+    text-align:center;
+    color:#9db7da;
+    font-size:12px;
+    line-height:1.5;
+}
+
+@media(max-width:390px){
+    .container{
+        padding-left:15px;
+        padding-right:15px;
+    }
+
+    .card{
+        padding-left:17px;
+        padding-right:17px;
+    }
+
+    .brand h1{
+        font-size:46px;
+    }
+
+    .hero h3{
+        font-size:52px;
+    }
+
+    .product{
+        font-size:32px;
+    }
+
+    .trust{
+        font-size:12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- BRAND -->
+    <div class="brand">
+        <h1>Vishal</h1>
+        <h2>Consulting</h2>
+        <div class="tagline">
+            TRADE • LEARN • GROW
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero">
+        <h3>
+            Welcome<br>
+            <span>Back!</span>
+        </h3>
+
+        <p>
+            <b>Exclusive Benefits</b> curated<br>
+            just for you today ✦
+        </p>
+    </div>
+
+    <!-- FORM CARD -->
+    <div class="card">
+
+        <div class="formtracker">
+            FORMTRACKER
+        </div>
+
+        <div class="company">
+            VISHAL CONSULTING
+        </div>
+
+        <div class="product">
+            ANGEL ONE NXT
+        </div>
+
+        <div class="subtitle">
+            Fill in your details &amp; unlock exclusive deals
+        </div>
+
+        <form id="leadForm">
+
+            <!-- NAME -->
+            <label for="name">
+                ♙ &nbsp; NAME
+            </label>
+
+            <div class="input-box">
+                <span class="icon">♙</span>
+
+                <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    placeholder="NAME"
+                    maxlength="80"
+                    required
+                >
+            </div>
+
+
+            <!-- MOBILE -->
+            <label for="phone">
+                ☎ &nbsp; NUMBER
+            </label>
+
+            <div class="input-box">
+                <span class="icon">☎</span>
+
+                <input
+                    id="phone"
+                    type="tel"
+                    name="phone"
+                    inputmode="numeric"
+                    maxlength="10"
+                    placeholder="NUMBER"
+                    required
+                >
+            </div>
+
+
+            <!-- BUTTON -->
+            <button
+                id="submitBtn"
+                type="submit"
+            >
+                UNLOCK BENEFITS &nbsp; →
+            </button>
+
+        </form>
+
+
+        <!-- ERROR -->
+        <div
+            id="error"
+            class="message error"
+        ></div>
+
+
+        <!-- SUCCESS -->
+        <div
+            id="success"
+            class="message success"
+        >
+            <b>✓ Details Submitted</b>
+            <br>
+            Thank you. We have received your details.
+        </div>
+
+
+        <!-- TRUST -->
+        <div class="trust">
+            <span>♢ Secure</span>
+            <span>│</span>
+            <span>◉ Private</span>
+            <span>│</span>
+            <span>⚡ Instant</span>
+        </div>
+
+
+        <div class="privacy">
+            By continuing, you agree to our
+            <u>Terms &amp; Privacy</u>.
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/*
+========================================================
+GOOGLE APPS SCRIPT URL
+========================================================
+*/
+
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbwwT4XBymDqz52PTYF0mHHjBxLrV25c4RI1cabITouvI_5ZGA5dy6SYTtmojFKpGqnI/exec";
+
+
+const form =
+document.getElementById("leadForm");
+
+const nameInput =
+document.getElementById("name");
+
+const phoneInput =
+document.getElementById("phone");
+
+const submitBtn =
+document.getElementById("submitBtn");
+
+const errorBox =
+document.getElementById("error");
+
+const successBox =
+document.getElementById("success");
+
+
+/*
+========================================================
+ONLY NUMBERS ALLOWED IN MOBILE
+========================================================
+*/
+
+phoneInput.addEventListener("input",function(){
+
+    this.value =
+    this.value
+    .replace(/\D/g,"")
+    .slice(0,10);
+
+});
+
+
+/*
+========================================================
+FORM SUBMIT
+========================================================
+*/
+
+form.addEventListener("submit",async function(e){
+
+    e.preventDefault();
+
+    errorBox.style.display="none";
+
+    const name =
+    nameInput.value.trim();
+
+    const phone =
+    phoneInput.value.trim();
+
+
+    /*
+    NAME CHECK
+    */
+
+    if(name.length < 2){
+
+        errorBox.innerText =
+        "Please enter your name.";
+
+        errorBox.style.display="block";
+
+        return;
+    }
+
+
+    /*
+    MOBILE CHECK
+    */
+
+    if(!/^[0-9]{10}$/.test(phone)){
+
+        errorBox.innerText =
+        "Please enter a valid 10-digit mobile number.";
+
+        errorBox.style.display="block";
+
+        return;
+    }
+
+
+    /*
+    BUTTON DISABLE
+    */
+
+    submitBtn.disabled=true;
+
+    submitBtn.innerText =
+    "SUBMITTING...";
+
+
+    /*
+    DATA
+    */
+
+    const data =
+    new URLSearchParams();
+
+    data.append("name",name);
+    data.append("phone",phone);
+
+
+    /*
+    SEND TO GOOGLE SHEET
+    */
+
+    try{
+
+        await fetch(
+            GOOGLE_SCRIPT_URL,
+            {
+                method:"POST",
+                mode:"no-cors",
+                headers:{
+                    "Content-Type":
+                    "application/x-www-form-urlencoded"
+                },
+                body:data.toString()
+            }
+        );
+
+
+        /*
+        SUCCESS
+        */
+
+        form.style.display="none";
+
+        successBox.style.display="block";
+
+
+    }catch(error){
+
+        console.error(error);
+
+        errorBox.innerText =
+        "Something went wrong. Please try again.";
+
+        errorBox.style.display="block";
+
+        submitBtn.disabled=false;
+
+        submitBtn.innerText =
+        "UNLOCK BENEFITS →";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
