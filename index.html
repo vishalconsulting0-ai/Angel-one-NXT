@@ -4,412 +4,388 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Vishal Consulting</title>
+<title>Vishal Consulting | Angel One NXT</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-body {
-    min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #ffffff;
-
+body{
+    min-height:100vh;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
     background:
-        radial-gradient(
-            circle at 50% 0%,
-            #123d78 0%,
-            #081a36 35%,
-            #020812 75%,
-            #01050b 100%
-        );
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 20px;
+    radial-gradient(circle at 90% 8%,rgba(30,130,255,.40),transparent 28%),
+    radial-gradient(circle at 5% 85%,rgba(20,75,180,.35),transparent 32%),
+    linear-gradient(145deg,#020817,#061b3d,#020b20);
+    overflow-x:hidden;
 }
 
-.container {
-    width: 100%;
-    max-width: 430px;
-    text-align: center;
+body:before{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    background:rgba(0,130,255,.18);
+    filter:blur(130px);
+    top:-200px;
+    right:-160px;
+    pointer-events:none;
 }
 
-/* =========================
-   LOGO
-========================= */
-
-.logo-box {
-    width: 150px;
-    height: 150px;
-
-    margin: 0 auto 8px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container{
+    width:100%;
+    max-width:620px;
+    margin:auto;
+    padding:32px 20px 50px;
+    position:relative;
 }
 
-.logo-box iframe {
-    width: 150px;
-    height: 150px;
-
-    border: none;
-    background: transparent;
-
-    display: block;
+.brand{
+    text-align:center;
+    margin-bottom:30px;
 }
 
-/* =========================
-   BRAND NAME
-========================= */
-
-.brand {
-    font-size: 30px;
-    font-weight: 800;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 6px;
-
-    color: #ffffff;
+.brand h1{
+    font-size:54px;
+    line-height:.9;
+    font-weight:800;
+    letter-spacing:-2px;
 }
 
-.subtitle {
-    font-size: 12px;
-    font-weight: 700;
-
-    letter-spacing: 4px;
-
-    color: #21baff;
-
-    margin-bottom: 25px;
+.brand h2{
+    font-size:31px;
+    font-weight:300;
+    margin-top:3px;
 }
 
-/* =========================
-   CARD
-========================= */
+.tagline{
+    margin-top:14px;
+    font-size:11px;
+    letter-spacing:5px;
+    color:#d9e9ff;
+}
 
-.card {
-    width: 100%;
+.hero{
+    margin:20px 0 30px;
+}
 
-    padding: 28px 22px;
+.hero h3{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:64px;
+    line-height:.9;
+    letter-spacing:-2px;
+}
 
-    border-radius: 24px;
+.hero h3 span{
+    color:#36aaff;
+    font-style:italic;
+}
 
-    background: rgba(255, 255, 255, 0.075);
+.hero p{
+    margin-top:24px;
+    font-size:18px;
+    line-height:1.5;
+    color:#dceaff;
+}
 
-    border: 1px solid rgba(255, 255, 255, 0.15);
-
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
+.card{
+    padding:29px 22px 25px;
+    border-radius:34px;
+    background:rgba(9,31,69,.78);
+    border:1px solid rgba(76,163,255,.75);
     box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.5),
-        inset 0 1px 0 rgba(255,255,255,0.08);
+    0 0 35px rgba(0,126,255,.23),
+    inset 0 0 30px rgba(255,255,255,.025);
+    backdrop-filter:blur(16px);
 }
 
-/* =========================
-   TITLE
-========================= */
-
-.title {
-    font-size: 25px;
-    font-weight: 800;
-
-    margin-bottom: 8px;
+.formtracker{
+    text-align:center;
+    color:#66b8ff;
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:7px;
+    margin-bottom:23px;
 }
 
-.description {
-    color: #b9c8dc;
-
-    font-size: 14px;
-
-    line-height: 1.6;
-
-    margin-bottom: 24px;
+.company{
+    text-align:center;
+    color:#48aaff;
+    font-size:26px;
+    font-weight:800;
 }
 
-/* =========================
-   INPUT
-========================= */
-
-.input {
-    width: 100%;
-
-    padding: 15px 16px;
-
-    margin-bottom: 14px;
-
-    border-radius: 12px;
-
-    border: 1px solid rgba(255,255,255,0.17);
-
-    outline: none;
-
-    background: rgba(0,0,0,0.28);
-
-    color: #ffffff;
-
-    font-size: 15px;
-
-    transition: 0.2s;
+.product{
+    text-align:center;
+    margin-top:7px;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:40px;
 }
 
-.input:focus {
-    border-color: #16bfff;
-
-    box-shadow:
-        0 0 0 2px rgba(0,190,255,0.12);
+.subtitle{
+    text-align:center;
+    margin:13px auto 27px;
+    color:#bcd1f0;
+    line-height:1.45;
+    font-size:16px;
 }
 
-.input::placeholder {
-    color: #8f9db1;
+label{
+    display:block;
+    margin:17px 0 9px;
+    font-size:16px;
+    font-weight:800;
 }
 
-/* =========================
-   BUTTON
-========================= */
-
-button {
-    width: 100%;
-
-    padding: 16px;
-
-    border: none;
-
-    border-radius: 12px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #006cff,
-            #00c6ff
-        );
-
-    color: #ffffff;
-
-    font-size: 15px;
-
-    font-weight: 800;
-
-    letter-spacing: 0.5px;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 10px 30px rgba(0,145,255,0.32);
-
-    transition: 0.2s;
+.input-box{
+    position:relative;
 }
 
-button:hover {
-    transform: translateY(-1px);
-
-    box-shadow:
-        0 14px 35px rgba(0,170,255,0.42);
+.icon{
+    position:absolute;
+    left:18px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#9bcaff;
+    font-size:20px;
 }
 
-button:active {
-    transform: scale(0.98);
+input{
+    width:100%;
+    height:58px;
+    padding:0 20px 0 52px;
+    border-radius:30px;
+    border:1px solid #559fff;
+    outline:none;
+    color:#fff;
+    background:rgba(28,67,125,.62);
+    font-size:17px;
 }
 
-button:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
+input::placeholder{
+    color:#a9c3e8;
 }
 
-/* =========================
-   SUCCESS MESSAGE
-========================= */
-
-.success {
-    display: none;
-
-    padding: 20px 5px;
+input:focus{
+    border-color:#7bc3ff;
+    box-shadow:0 0 0 3px rgba(54,157,255,.18);
 }
 
-.success h2 {
-    color: #25d6ff;
-
-    font-size: 23px;
-
-    margin-bottom: 10px;
+button{
+    width:100%;
+    min-height:60px;
+    margin-top:25px;
+    border:0;
+    border-radius:35px;
+    color:white;
+    font-size:17px;
+    font-weight:800;
+    letter-spacing:1px;
+    background:linear-gradient(90deg,#087cff,#24b8ff);
+    box-shadow:0 10px 30px rgba(0,130,255,.35);
+    cursor:pointer;
 }
 
-.success p {
-    color: #c5d1e2;
-
-    font-size: 14px;
-
-    line-height: 1.6;
+button:disabled{
+    opacity:.65;
+    cursor:wait;
 }
 
-/* =========================
-   FOOTER
-========================= */
-
-.footer {
-    margin-top: 18px;
-
-    color: #718198;
-
-    font-size: 11px;
-
-    line-height: 1.5;
+.message{
+    display:none;
+    text-align:center;
+    margin-top:18px;
+    line-height:1.5;
 }
 
-/* =========================
-   MOBILE
-========================= */
+.error{
+    color:#ffaaaa;
+}
 
-@media (max-width: 480px) {
+.success{
+    color:#7dffb0;
+}
 
-    body {
-        padding: 15px;
+.trust{
+    display:flex;
+    justify-content:space-around;
+    margin:29px 0 21px;
+    color:#d9e7fb;
+    font-size:14px;
+}
+
+.privacy{
+    text-align:center;
+    color:#9db7da;
+    font-size:12px;
+    line-height:1.5;
+}
+
+@media(max-width:390px){
+    .container{
+        padding-left:15px;
+        padding-right:15px;
     }
 
-    .logo-box {
-        width: 135px;
-        height: 135px;
+    .card{
+        padding-left:17px;
+        padding-right:17px;
     }
 
-    .logo-box iframe {
-        width: 135px;
-        height: 135px;
+    .brand h1{
+        font-size:46px;
     }
 
-    .brand {
-        font-size: 27px;
+    .hero h3{
+        font-size:52px;
     }
 
-    .card {
-        padding: 25px 18px;
+    .product{
+        font-size:32px;
+    }
+
+    .trust{
+        font-size:12px;
     }
 }
 </style>
-
 </head>
 
 <body>
 
 <div class="container">
 
-    <!-- =========================
-         LOGO
-    ========================== -->
-
-    <div class="logo-box">
-
-        <iframe
-            src="logo.html"
-            title="Vishal Consulting Logo"
-            scrolling="no">
-        </iframe>
-
-    </div>
-
-
-    <!-- =========================
-         BRAND
-    ========================== -->
-
+    <!-- BRAND -->
     <div class="brand">
-        Vishal Consulting
+        <h1>Vishal</h1>
+        <h2>Consulting</h2>
+        <div class="tagline">
+            TRADE • LEARN • GROW
+        </div>
     </div>
 
-    <div class="subtitle">
-        ANGEL ONE NXT
+    <!-- HERO -->
+    <div class="hero">
+        <h3>
+            Welcome<br>
+            <span>Back!</span>
+        </h3>
+
+        <p>
+            <b>Exclusive Benefits</b> curated<br>
+            just for you today ✦
+        </p>
     </div>
 
-
-    <!-- =========================
-         MAIN CARD
-    ========================== -->
-
+    <!-- FORM CARD -->
     <div class="card">
 
-        <div id="formSection">
+        <div class="formtracker">
+            FORMTRACKER
+        </div>
 
-            <div class="title">
-                Get Started
-            </div>
+        <div class="company">
+            VISHAL CONSULTING
+        </div>
 
-            <div class="description">
-                Enter your details to receive more information.
-            </div>
+        <div class="product">
+            ANGEL ONE NXT
+        </div>
 
+        <div class="subtitle">
+            Fill in your details &amp; unlock exclusive deals
+        </div>
 
-            <!-- LEAD FORM -->
+        <form id="leadForm">
 
-            <form id="leadForm">
+            <!-- NAME -->
+            <label for="name">
+                ♙ &nbsp; NAME
+            </label>
+
+            <div class="input-box">
+                <span class="icon">♙</span>
 
                 <input
-                    class="input"
+                    id="name"
                     type="text"
                     name="name"
-                    placeholder="Enter Your Name"
-                    autocomplete="name"
+                    placeholder="NAME"
+                    maxlength="80"
                     required
                 >
+            </div>
 
+
+            <!-- MOBILE -->
+            <label for="phone">
+                ☎ &nbsp; NUMBER
+            </label>
+
+            <div class="input-box">
+                <span class="icon">☎</span>
 
                 <input
-                    class="input"
+                    id="phone"
                     type="tel"
                     name="phone"
-                    placeholder="Enter Mobile Number"
                     inputmode="numeric"
                     maxlength="10"
-                    pattern="[0-9]{10}"
-                    autocomplete="tel"
+                    placeholder="NUMBER"
                     required
                 >
+            </div>
 
 
-                <button
-                    type="submit"
-                    id="submitButton">
-                    UNLOCK BENEFITS →
-                </button>
+            <!-- BUTTON -->
+            <button
+                id="submitBtn"
+                type="submit"
+            >
+                UNLOCK BENEFITS &nbsp; →
+            </button>
 
-            </form>
-
-        </div>
+        </form>
 
 
-        <!-- =========================
-             SUCCESS
-        ========================== -->
-
+        <!-- ERROR -->
         <div
-            class="success"
-            id="successMessage">
+            id="error"
+            class="message error"
+        ></div>
 
-            <h2>
-                Details Submitted ✓
-            </h2>
 
-            <p>
-                Thank you. Your details have been submitted successfully.
-            </p>
-
+        <!-- SUCCESS -->
+        <div
+            id="success"
+            class="message success"
+        >
+            <b>✓ Details Submitted</b>
+            <br>
+            Thank you. We have received your details.
         </div>
 
-    </div>
+
+        <!-- TRUST -->
+        <div class="trust">
+            <span>♢ Secure</span>
+            <span>│</span>
+            <span>◉ Private</span>
+            <span>│</span>
+            <span>⚡ Instant</span>
+        </div>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
+        <div class="privacy">
+            By continuing, you agree to our
+            <u>Terms &amp; Privacy</u>.
+        </div>
 
-    <div class="footer">
-        © 2026 Vishal Consulting. All rights reserved.
     </div>
 
 </div>
@@ -417,109 +393,165 @@ button:disabled {
 
 <script>
 
-/* =========================
-   GOOGLE SHEETS WEB APP URL
-========================= */
+/*
+========================================================
+GOOGLE APPS SCRIPT URL
+========================================================
+*/
 
-const SCRIPT_URL =
+const GOOGLE_SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbwwT4XBymDqz52PTYF0mHHjBxLrV25c4RI1cabITouvI_5ZGA5dy6SYTtmojFKpGqnI/exec";
 
 
-/* =========================
-   FORM SUBMISSION
-========================= */
+const form =
+document.getElementById("leadForm");
 
-document
-.getElementById("leadForm")
-.addEventListener("submit", function(e) {
+const nameInput =
+document.getElementById("name");
+
+const phoneInput =
+document.getElementById("phone");
+
+const submitBtn =
+document.getElementById("submitBtn");
+
+const errorBox =
+document.getElementById("error");
+
+const successBox =
+document.getElementById("success");
+
+
+/*
+========================================================
+ONLY NUMBERS ALLOWED IN MOBILE
+========================================================
+*/
+
+phoneInput.addEventListener("input",function(){
+
+    this.value =
+    this.value
+    .replace(/\D/g,"")
+    .slice(0,10);
+
+});
+
+
+/*
+========================================================
+FORM SUBMIT
+========================================================
+*/
+
+form.addEventListener("submit",async function(e){
 
     e.preventDefault();
 
+    errorBox.style.display="none";
 
-    const form = this;
+    const name =
+    nameInput.value.trim();
 
-    const button =
-        document.getElementById("submitButton");
-
-
-    /* Button loading */
-
-    button.disabled = true;
-
-    button.innerText =
-        "SUBMITTING...";
+    const phone =
+    phoneInput.value.trim();
 
 
-    /* Create data */
+    /*
+    NAME CHECK
+    */
+
+    if(name.length < 2){
+
+        errorBox.innerText =
+        "Please enter your name.";
+
+        errorBox.style.display="block";
+
+        return;
+    }
+
+
+    /*
+    MOBILE CHECK
+    */
+
+    if(!/^[0-9]{10}$/.test(phone)){
+
+        errorBox.innerText =
+        "Please enter a valid 10-digit mobile number.";
+
+        errorBox.style.display="block";
+
+        return;
+    }
+
+
+    /*
+    BUTTON DISABLE
+    */
+
+    submitBtn.disabled=true;
+
+    submitBtn.innerText =
+    "SUBMITTING...";
+
+
+    /*
+    DATA
+    */
 
     const data =
-        new URLSearchParams();
+    new URLSearchParams();
+
+    data.append("name",name);
+    data.append("phone",phone);
 
 
-    data.append(
-        "name",
-        form.name.value.trim()
-    );
+    /*
+    SEND TO GOOGLE SHEET
+    */
+
+    try{
+
+        await fetch(
+            GOOGLE_SCRIPT_URL,
+            {
+                method:"POST",
+                mode:"no-cors",
+                headers:{
+                    "Content-Type":
+                    "application/x-www-form-urlencoded"
+                },
+                body:data.toString()
+            }
+        );
 
 
-    data.append(
-        "phone",
-        form.phone.value.trim()
-    );
+        /*
+        SUCCESS
+        */
+
+        form.style.display="none";
+
+        successBox.style.display="block";
 
 
-    /* Send to Google Sheets */
-
-    fetch(
-        SCRIPT_URL,
-        {
-            method: "POST",
-
-            mode: "no-cors",
-
-            headers: {
-                "Content-Type":
-                "application/x-www-form-urlencoded"
-            },
-
-            body:
-                data.toString()
-        }
-    )
-
-    .then(function() {
-
-        /* Hide form */
-
-        document
-        .getElementById("formSection")
-        .style.display = "none";
-
-
-        /* Show success */
-
-        document
-        .getElementById("successMessage")
-        .style.display = "block";
-
-    })
-
-    .catch(function(error) {
+    }catch(error){
 
         console.error(error);
 
+        errorBox.innerText =
+        "Something went wrong. Please try again.";
 
-        button.disabled = false;
+        errorBox.style.display="block";
 
-        button.innerText =
-            "UNLOCK BENEFITS →";
+        submitBtn.disabled=false;
 
+        submitBtn.innerText =
+        "UNLOCK BENEFITS →";
 
-        alert(
-            "Something went wrong. Please try again."
-        );
-
-    });
+    }
 
 });
 
