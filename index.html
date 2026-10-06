@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Vishal Consulting | Angel One NXT</title>
+<title>Angel One NXT</title>
 
 <style>
 *{
@@ -45,30 +45,9 @@ body:before{
     position:relative;
 }
 
-.brand{
-    text-align:center;
-    margin-bottom:30px;
-}
-
-.brand h1{
-    font-size:54px;
-    line-height:.9;
-    font-weight:800;
-    letter-spacing:-2px;
-}
-
-.brand h2{
-    font-size:31px;
-    font-weight:300;
-    margin-top:3px;
-}
-
-.tagline{
-    margin-top:14px;
-    font-size:11px;
-    letter-spacing:5px;
-    color:#d9e9ff;
-}
+/* =========================
+   HERO
+========================= */
 
 .hero{
     margin:20px 0 30px;
@@ -93,6 +72,10 @@ body:before{
     color:#dceaff;
 }
 
+/* =========================
+   CARD
+========================= */
+
 .card{
     padding:29px 22px 25px;
     border-radius:34px;
@@ -104,14 +87,9 @@ body:before{
     backdrop-filter:blur(16px);
 }
 
-.formtracker{
-    text-align:center;
-    color:#66b8ff;
-    font-size:13px;
-    font-weight:bold;
-    letter-spacing:7px;
-    margin-bottom:23px;
-}
+/* =========================
+   COMPANY
+========================= */
 
 .company{
     text-align:center;
@@ -134,6 +112,10 @@ body:before{
     line-height:1.45;
     font-size:16px;
 }
+
+/* =========================
+   FORM
+========================= */
 
 label{
     display:block;
@@ -226,7 +208,12 @@ button:disabled{
     line-height:1.5;
 }
 
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:390px){
+
     .container{
         padding-left:15px;
         padding-right:15px;
@@ -235,10 +222,6 @@ button:disabled{
     .card{
         padding-left:17px;
         padding-right:17px;
-    }
-
-    .brand h1{
-        font-size:46px;
     }
 
     .hero h3{
@@ -254,23 +237,16 @@ button:disabled{
     }
 }
 </style>
+
 </head>
 
 <body>
 
 <div class="container">
 
-    <!-- BRAND -->
-    <div class="brand">
-        <h1>Vishal</h1>
-        <h2>Consulting</h2>
-        <div class="tagline">
-            TRADE • LEARN • GROW
-        </div>
-    </div>
-
     <!-- HERO -->
     <div class="hero">
+
         <h3>
             Welcome<br>
             <span>Back!</span>
@@ -280,14 +256,12 @@ button:disabled{
             <b>Exclusive Benefits</b> curated<br>
             just for you today ✦
         </p>
+
     </div>
+
 
     <!-- FORM CARD -->
     <div class="card">
-
-        <div class="formtracker">
-            FORMTRACKER
-        </div>
 
         <div class="company">
             VISHAL CONSULTING
@@ -301,14 +275,17 @@ button:disabled{
             Fill in your details &amp; unlock exclusive deals
         </div>
 
+
         <form id="leadForm">
 
             <!-- NAME -->
+
             <label for="name">
                 ♙ &nbsp; NAME
             </label>
 
             <div class="input-box">
+
                 <span class="icon">♙</span>
 
                 <input
@@ -319,15 +296,18 @@ button:disabled{
                     maxlength="80"
                     required
                 >
+
             </div>
 
 
             <!-- MOBILE -->
+
             <label for="phone">
                 ☎ &nbsp; NUMBER
             </label>
 
             <div class="input-box">
+
                 <span class="icon">☎</span>
 
                 <input
@@ -339,51 +319,67 @@ button:disabled{
                     placeholder="NUMBER"
                     required
                 >
+
             </div>
 
 
             <!-- BUTTON -->
+
             <button
                 id="submitBtn"
-                type="submit"
-            >
+                type="submit">
+
                 UNLOCK BENEFITS &nbsp; →
+
             </button>
 
         </form>
 
 
         <!-- ERROR -->
+
         <div
             id="error"
-            class="message error"
-        ></div>
+            class="message error">
+        </div>
 
 
         <!-- SUCCESS -->
+
         <div
             id="success"
-            class="message success"
-        >
+            class="message success">
+
             <b>✓ Details Submitted</b>
             <br>
+
             Thank you. We have received your details.
+
         </div>
 
 
         <!-- TRUST -->
+
         <div class="trust">
+
             <span>♢ Secure</span>
+
             <span>│</span>
+
             <span>◉ Private</span>
+
             <span>│</span>
+
             <span>⚡ Instant</span>
+
         </div>
 
 
         <div class="privacy">
+
             By continuing, you agree to our
             <u>Terms &amp; Privacy</u>.
+
         </div>
 
     </div>
@@ -505,6 +501,7 @@ form.addEventListener("submit",async function(e){
     new URLSearchParams();
 
     data.append("name",name);
+
     data.append("phone",phone);
 
 
@@ -518,11 +515,14 @@ form.addEventListener("submit",async function(e){
             GOOGLE_SCRIPT_URL,
             {
                 method:"POST",
+
                 mode:"no-cors",
+
                 headers:{
                     "Content-Type":
                     "application/x-www-form-urlencoded"
                 },
+
                 body:data.toString()
             }
         );
