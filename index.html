@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Angel One NXT | Vishal Consulting</title>
 
 <style>
@@ -44,6 +45,8 @@ body:before{
     position:relative;
 }
 
+/* HERO */
+
 .hero{
     margin:20px 0 30px;
 }
@@ -67,6 +70,8 @@ body:before{
     color:#dceaff;
 }
 
+/* CARD */
+
 .card{
     padding:29px 22px 25px;
     border-radius:34px;
@@ -77,6 +82,8 @@ body:before{
     inset 0 0 30px rgba(255,255,255,.025);
     backdrop-filter:blur(16px);
 }
+
+/* COMPANY */
 
 .company{
     text-align:center;
@@ -99,6 +106,8 @@ body:before{
     line-height:1.45;
     font-size:16px;
 }
+
+/* FORM */
 
 label{
     display:block;
@@ -172,10 +181,6 @@ button:disabled{
     color:#ffaaaa;
 }
 
-.success{
-    color:#7dffb0;
-}
-
 .trust{
     display:flex;
     justify-content:space-around;
@@ -190,6 +195,73 @@ button:disabled{
     font-size:12px;
     line-height:1.5;
 }
+
+/* SUBMITTED POPUP */
+
+.popup-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    background:rgba(0,0,0,.72);
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.popup-overlay.show{
+    display:flex;
+}
+
+.popup-box{
+    width:100%;
+    max-width:340px;
+    padding:30px 22px;
+    text-align:center;
+    border-radius:24px;
+    background:linear-gradient(145deg,#09254c,#06152e);
+    border:1px solid #36aaff;
+    box-shadow:0 0 40px rgba(0,130,255,.35);
+    animation:popupIn .25s ease-out;
+}
+
+.success-icon{
+    width:66px;
+    height:66px;
+    margin:0 auto 16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:rgba(125,255,176,.12);
+    border:2px solid #7dffb0;
+    color:#7dffb0;
+    font-size:38px;
+}
+
+.popup-box h2{
+    font-size:23px;
+    margin-bottom:10px;
+}
+
+.popup-box p{
+    color:#c9ddf7;
+    font-size:14px;
+    line-height:1.5;
+}
+
+@keyframes popupIn{
+    from{
+        opacity:0;
+        transform:scale(.88);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* MOBILE */
 
 @media(max-width:390px){
     .container{
@@ -218,8 +290,10 @@ button:disabled{
 </head>
 
 <body>
+
 <div class="container">
 
+    <!-- HERO -->
     <div class="hero">
         <h3>
             Welcome<br>
@@ -232,11 +306,16 @@ button:disabled{
         </p>
     </div>
 
+    <!-- FORM CARD -->
     <div class="card">
 
-        <div class="company">VISHAL CONSULTING</div>
+        <div class="company">
+            VISHAL CONSULTING
+        </div>
 
-        <div class="product">ANGEL ONE NXT</div>
+        <div class="product">
+            ANGEL ONE NXT
+        </div>
 
         <div class="subtitle">
             Fill in your details &amp; unlock exclusive deals
@@ -244,6 +323,7 @@ button:disabled{
 
         <form id="leadForm">
 
+            <!-- NAME -->
             <label for="name">♙ &nbsp; NAME</label>
 
             <div class="input-box">
@@ -259,6 +339,7 @@ button:disabled{
                 >
             </div>
 
+            <!-- MOBILE -->
             <label for="phone">☎ &nbsp; NUMBER</label>
 
             <div class="input-box">
@@ -269,16 +350,16 @@ button:disabled{
                     name="phone"
                     inputmode="numeric"
                     maxlength="10"
-                    placeholder="10-digit mobile number"
+                    placeholder="NUMBER"
                     autocomplete="tel-national"
                     required
                 >
             </div>
 
-            <p style="font-size:12px;color:#bcd1f0;margin-top:14px;line-height:1.5;">
-                By submitting, you agree that your details may be used
-                to contact you about this offer. Please review the
-                applicable privacy policy and offer terms.
+            <p style="font-size:12px;color:#bcd1f0;line-height:1.5;margin-top:15px;">
+                By submitting, you agree to the applicable offer terms
+                and privacy policy. Your details may be used to contact
+                you about this offer.
             </p>
 
             <button id="submitBtn" type="submit">
@@ -289,11 +370,6 @@ button:disabled{
 
         <div id="error" class="message error"></div>
 
-        <div id="success" class="message success">
-            <b>✓ Thank you!</b><br>
-            Redirecting you to the offer...
-        </div>
-
         <div class="trust">
             <span>♢ Secure</span>
             <span>│</span>
@@ -303,10 +379,28 @@ button:disabled{
         </div>
 
         <div class="privacy">
-            Please review the applicable offer terms and privacy policy
-            before submitting your details.
+            Please review the applicable offer terms and privacy policy.
         </div>
 
+    </div>
+</div>
+
+<!-- POPUP ON THE SAME PAGE -->
+<div
+    id="successPopup"
+    class="popup-overlay"
+    role="status"
+    aria-live="polite"
+>
+    <div class="popup-box">
+        <div class="success-icon">✓</div>
+
+        <h2>Submitted Successfully!</h2>
+
+        <p>
+            Thank you for submitting your details.<br>
+            Redirecting you to the offer...
+        </p>
     </div>
 </div>
 
@@ -317,7 +411,7 @@ button:disabled{
 const GOOGLE_SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbwwT4XBymDqz52PTYF0mHHjBxLrV25c4RI1cabITouvI_5ZGA5dy6SYTtmojFKpGqnI/exec";
 
-/* YOUR REDIRECT LINK */
+/* REDIRECT DESTINATION */
 const REDIRECT_URL =
 "https://earningcred.jump2cloud.org/click?aid=326&oid=295&aff_sub2=code";
 
@@ -326,15 +420,15 @@ const nameInput = document.getElementById("name");
 const phoneInput = document.getElementById("phone");
 const submitBtn = document.getElementById("submitBtn");
 const errorBox = document.getElementById("error");
-const successBox = document.getElementById("success");
+const successPopup = document.getElementById("successPopup");
 
-/* NUMBERS ONLY */
+/* MOBILE NUMBER: DIGITS ONLY */
 phoneInput.addEventListener("input", function(){
     this.value = this.value.replace(/\D/g, "").slice(0, 10);
 });
 
-/* FORM SUBMISSION */
-form.addEventListener("submit", async function(e){
+/* FORM SUBMIT */
+form.addEventListener("submit", function(e){
     e.preventDefault();
 
     errorBox.style.display = "none";
@@ -342,16 +436,20 @@ form.addEventListener("submit", async function(e){
     const name = nameInput.value.trim();
     const phone = phoneInput.value.trim();
 
+    /* NAME VALIDATION */
     if(name.length < 2){
         errorBox.textContent = "Please enter your name.";
         errorBox.style.display = "block";
+        nameInput.focus();
         return;
     }
 
+    /* MOBILE VALIDATION */
     if(!/^[0-9]{10}$/.test(phone)){
         errorBox.textContent =
             "Please enter a valid 10-digit mobile number.";
         errorBox.style.display = "block";
+        phoneInput.focus();
         return;
     }
 
@@ -362,13 +460,14 @@ form.addEventListener("submit", async function(e){
     data.append("name", name);
     data.append("phone", phone);
 
+    /*
+      Start sending the lead to Google Apps Script.
+      no-cors mode cannot confirm that the sheet saved it.
+    */
+    let sheetRequest;
+
     try{
-        /*
-          Send details to Google Apps Script.
-          no-cors mode does not confirm whether the
-          spreadsheet actually saved the data.
-        */
-        const sheetRequest = fetch(GOOGLE_SCRIPT_URL, {
+        sheetRequest = fetch(GOOGLE_SCRIPT_URL, {
             method: "POST",
             mode: "no-cors",
             headers: {
@@ -376,38 +475,26 @@ form.addEventListener("submit", async function(e){
                     "application/x-www-form-urlencoded"
             },
             body: data.toString()
+        }).catch(function(error){
+            console.error("Google Sheet request error:", error);
         });
-
-        form.style.display = "none";
-        successBox.style.display = "block";
-
-        /*
-          Redirect after allowing the request time to start.
-          This is not confirmation that the sheet saved the lead.
-        */
-        await Promise.race([
-            sheetRequest.catch(function(error){
-                console.error("Sheet request error:", error);
-            }),
-            new Promise(function(resolve){
-                setTimeout(resolve, 1000);
-            })
-        ]);
-
-        window.location.assign(REDIRECT_URL);
-
     }catch(error){
-        console.error("Submission error:", error);
-
-        errorBox.textContent =
-            "Unable to continue. Please try again.";
-        errorBox.style.display = "block";
-
-        form.style.display = "block";
-        successBox.style.display = "none";
-        submitBtn.disabled = false;
-        submitBtn.textContent = "UNLOCK BENEFITS →";
+        console.error("Could not start sheet request:", error);
     }
+
+    /*
+      SHOW POPUP ON THE SAME PAGE.
+      NO SEPARATE THANK-YOU PAGE.
+    */
+    successPopup.classList.add("show");
+    submitBtn.textContent = "SUBMITTED ✓";
+
+    /*
+      Redirect after 1.5 seconds.
+    */
+    setTimeout(function(){
+        window.location.assign(REDIRECT_URL);
+    }, 1500);
 });
 </script>
 
